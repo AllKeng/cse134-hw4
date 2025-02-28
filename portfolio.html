@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allen's Website: Projects</title>
+     <!-- Placeholder for the external CSS file -->
+     <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+  <header>
+    <nav>
+      <!-- Hidden checkbox for toggle functionality -->
+      <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+      <!-- Hamburger icon for small screens -->
+      <label for="hamburger-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html" style="color: #FFCC00">Projects</a></li>
+        <li><a href="info.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+      <main>
+        <hr>
+        <section>
+          <hgroup>
+            <h2>List of Projects</h2>
+            <p>These are projects I have collaborated. </p>
+          </hgroup>
+          <fancy-card>
+            <header>Snowboard Support System</header>
+            <!-- Picture Element: Responsive Images -->
+            <picture>
+                <source srcset="media/BoardView.png" media="(min-width: 1024px)" >
+                <!-- Medium image for tablets -->
+                <source srcset="media/BoardView-tablet.png" media="(min-width: 768px)" >
+                
+                <!-- Small image for mobile -->
+                <img src="media/BoardView-mobile.png" alt="TripleS Board">
+            </picture>
+            <ul>
+              <li>Arduino C for accelerometer data retrieval 
+                and bluetooth data transferring</li>
+              <li>KiCad for PCB design to integrate our ESP32, 
+                accelerometer, power supply, potentiometer, 
+                and buzzer in a compact manner.
+              </li>
+              <li>Python GUI to retrieve and display data via 
+                Bleak and Tkinter.
+              </li>
+              <li><a href="https://allkeng.github.io/Snowboard-Support-System/">Project website</a> 
+                using HTML, JS, CSS.</li>
+            </ul>
+            <footer>C, Python, Bluetooth Low Energy, HTML, JS, CSS</footer>
+          </fancy-card>
+
+          <fancy-card>
+            <header>Pantry Pals</header>
+            <!-- Video Element -->
+          <video controls>
+              <source src="media/pantrypalDemo.mp4" type="video/mp4">
+              Your browser does not support the video element.
+          </video>
+            <ul>
+              <li>Server setup to handle HTTP request for managing
+                recipes and user data with backend connectivity
+                to a MongoDB database.
+              </li>
+              <li>ChatGPT API used to generate recipes and images 
+                from user-provided ingredients.
+              </li>
+              <li>Java GUI to display recipe details, while 
+                following MVC Principles.
+              </li>
+              <li>Github Actions setup to run JUnit Test</li>
+            </ul>
+            <footer>Java, JUnit, JavaFX, ChatGPT API, RESTful API, MongoDB</footer>
+          </fancy-card>
+        </section>
+
+        <dl>
+          <dt>PCB</dt>
+          <dd>Programmable Circuit Board</dd>
+
+          <dt>MVC</dt>
+          <dd>Model View Controller</dd>
+        </dl>
+      </main>
+
+      <!-- Handy for Project Display -->
+      <template>
+        <p>Hidden content that can be cloned via JavaScript.</p>
+      </template>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 Allen's Portfolio</p>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allen's Website: Home</title>
+    <!-- Placeholder for now -->
+    <style></style>
+     <!-- Placeholder for the external CSS file -->
+     <link rel="stylesheet" href="css/styles.css"> 
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+          <!-- Hidden checkbox for toggle functionality -->
+          <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+          <!-- Hamburger icon for small screens -->
+          <label for="hamburger-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="nav-links">
+            <li><a href="index.html" style="color: #FFCC00">Home</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="info.html">Resume</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+      <main>
+        <h2>About Me</h2>
+        <div class="about-content">
+          <picture>
+            <img src="media/headshot.jpg" alt="Image of Me" class="headshot">
+          </picture>
+          <p class="about-text">Hello, welcome to my portfolio! <br> I'm a Computer Engineering major at UC San Diego.  <br> <br>
+          Something about me is that I love putting myself in new situations and facing challenges.<br>
+          <em> It's just a part of who I am.</em> <br>
+          <br>I always want to do more, be more.</p>
+          <aside class="sidebar">
+            <h3>My Interests</h3>
+            <ul>
+              <li><strong>Embedded Software</strong>: Specifically for wireless systems, focusing on the development of software that interacts with and controls wireless communication devices.</li>
+              <li>
+                <abbr title="Field Programmable Gate Arrays"><strong>FPGA Design and Verification</strong></abbr>: 
+                <dfn title="Definition of Field Programmable Gate Arrays">FPGAs</dfn> are small, programmable integrated circuits that allow users to configure digital logic. This enables custom designs for a wide variety of applications.
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </main>
+        
+
+        <section class="about-section">
+          <h3>A quote that I abide by</h3>
+          <blockquote>
+            “You don't learn to walk by following rules. You learn by doing, and by falling over.”
+              <cite>— Richard Branson</cite>
+          </blockquote>
+
+          <details>
+            <summary>Why did I choose Computer Engineering as a major?</summary>
+            <p>I am interested in the connection between software and hardware. I can learn more about whether or not software or hardware can be improved to optimize a process.</p>
+          </details>
+
+          <details>
+            <summary>What is my current focus? </summary>
+            <p><span>Learning about VLSI Integrated Circuits and Systems Design in Industry</span></p>
+          </details>
+        </section>
+
+      <!-- Footer -->
+      <footer>
+        <p> &copy; 2025 Allen's Portfolio : Created for CSE134B: Web Client Languages</p>
+      </footer>
+</body>
+</html>

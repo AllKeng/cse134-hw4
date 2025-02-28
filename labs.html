@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allen's Website: Experiments</title>
+     <!-- Placeholder for the external CSS file -->
+     <link rel="stylesheet" href="css/styles.css"> 
+</head>
+<body>
+
+    <script>
+        // Define the custom element class
+        class HelloWorld extends HTMLElement {
+            // Constructor for the custom element
+            constructor() {
+                super();
+                // When the custom element is connected to the DOM, log to console
+                this.connectedCallback();
+            }
+
+            // Callback when element is added to the DOM
+            connectedCallback() {
+                console.log("Hello world!");
+            }
+        }
+        // Define the custom element
+        customElements.define('hello-world', HelloWorld);
+    </script>
+    <header>
+        <nav>
+          <!-- Hidden checkbox for toggle functionality -->
+          <input type="checkbox" id="hamburger-toggle" class="hamburger-toggle">
+          <!-- Hamburger icon for small screens -->
+          <label for="hamburger-toggle" class="hamburger-menu" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="portfolio.html">Projects</a></li>
+            <li><a href="info.html">Resume</a></li>
+            <li><a href="labs.html" style="color: #FFCC00">Experiment</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        
+      </header>
+
+      <!-- Main -->
+       <main>
+        <search>
+            <input type="search" placeholder="Search...">
+            <input list="page-list" id="pages" name="pages" placeholder="Search in Page...">
+            <datalist id="page-list">
+                <option value="Home">
+                <option value="Projects">
+                <option value="Resume">
+                <option value="Experiment">
+                <option value="Contact">
+            </datalist>
+        </search>
+        <section>
+            <h3> Using the canvas tag.</h3>
+            <canvas id="myCanvas"></canvas>
+            <script>
+                var canvas = document.getElementById('myCanvas');
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = "red";
+                ctx.fillRect(10, 10, 150, 100);
+            </script>
+            <p> As such</p> 
+                <pre>
+                    var canvas = document.getElementById('myCanvas');
+                    var ctx = canvas.getContext('2d');
+                    ctx.fillStyle = "red";
+                    ctx.fillRect(10, 10, 150, 100); 
+                </pre>
+            
+        </section>
+            
+        <hr> 
+        <section> 
+            <!-- Using the custom element -->
+            <hello-world></hello-world>
+            <h3>I have a custom element that calls the following, check your console to see it.</h3>
+            <pre><code>console.log("Hello, World!");</code></pre>
+            <p>Do <kbd>Ctrl + Shift + I</kbd> to see.</p>
+        </section>
+
+        <hr>
+        <section>
+            <h3> Having an audio element</h3>
+            <!-- Audio Element -->
+            <audio controls>
+                <source src="audio-file.mp3" type="audio/mpeg">
+                <source src="audio-file.ogg" type="audio/ogg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+
+        <section>
+            <h3> iFrame Usage</h3>
+            <!-- Iframe Element: Embedded Content -->
+            <iframe src="https://youtube.com" title="YouTube Embedded"></iframe>
+        </section>
+
+        <section>
+            <h3> Taking advantage of Figure tag</h3>
+            <!-- Figures and Quotes -->
+            <figure>
+                <img src="media/figure.jpg" alt="Figure">
+                <figcaption>Figure Caption</figcaption>
+            </figure>
+        </section>
+
+       </main>
+       <!-- No JS -->
+      <noscript>
+        Your browser does not support JavaScript!
+      </noscript>
+
+      <!-- Footer -->
+      <footer>
+        <p>&copy; 2025 Allen's Portfolio</p>
+      </footer>
+</body>
+</html>
