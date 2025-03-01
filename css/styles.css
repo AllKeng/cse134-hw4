@@ -10,6 +10,64 @@
     --link-color: #204ddf;
 }
 
+/* For Contact form */
+.required {
+    color: red;
+    font-weight: bold;
+}
+.output {
+    margin-top: 20px;
+}
+  
+.output output {
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+  
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    height: 1.5rem;
+
+}
+  
+.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+    height: 1.5rem;
+}
+/* Validity and validation styles */
+input:required, textarea:required {
+    border: 1px solid #ccc;
+}
+  
+input:valid, textarea:valid {
+    border-color: #4CAF50; /* Green border when valid */
+}
+  
+input:invalid, textarea:invalid {
+    border-color: #e0857f; /* Red border when invalid */
+}
+  
+/* Display placeholder styles */
+input:placeholder-shown, textarea:placeholder-shown {
+    border-color: #ccc; /* Light border when placeholder is shown */
+}
+  
+/* Highlight required fields */
+input:required:invalid, textarea:required:invalid {
+    background-color: #ffcccc; /* Light red background for invalid required fields */
+}
+  
+input[type="email"]:invalid {
+    background-color: #ffcccc; /* Light red background for invalid email */
+}
+/***************************************************************/
+
 header, nav {
     margin: 0;
     border: none; /* Remove any default borders */
@@ -491,7 +549,7 @@ fieldset {
 /* Form container */
 form {
     max-width: 600px;
-    margin: 0 auto;
+    margin: 1rem auto;
     padding: 20px;
     background-color: var(--background-color);
     border: 0.1rem dashed var(--text-color);
