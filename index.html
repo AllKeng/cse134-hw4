@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Allen's Website: Home</title>
     <!-- Placeholder for now -->
-    <style></style>
-     <!-- Placeholder for the external CSS file -->
-     <link rel="stylesheet" href="css/styles.css"> 
-     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
-</head>
+    <script src="scripts/theme-toggle.js" defer> </script>
+    <!-- Placeholder for the external CSS file -->
+    <link rel="stylesheet" href="css/styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@300;600&display=swap" rel="stylesheet">
+    
+    </head>
 <body>
     <header>
         <nav>
@@ -27,6 +28,19 @@
             <li><a href="info.html">Resume</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
+          <!-- Theme toggle button -->
+          <button id="theme-toggle" aria-label="Toggle Theme">
+            <span id="sun-icon">&#9728;</span> <!-- Sun icon for light mode -->
+            <span id="moon-icon">&#9790;</span> <!-- Moon icon for dark mode -->
+          </button>
+          <!-- Hide theme toggle for users with no JavaScript -->
+          <noscript>
+            <style>
+              #theme-toggle {
+                display: none;
+              }
+            </style>
+          </noscript>
         </nav>
       </header>
 

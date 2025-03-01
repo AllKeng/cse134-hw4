@@ -6,6 +6,7 @@
     <title>Allen's Website: Projects</title>
      <!-- Placeholder for the external CSS file -->
      <link rel="stylesheet" href="css/styles.css"> 
+     <script src="scripts/theme-toggle.js" defer> </script>
 </head>
 <body>
   <header>
@@ -24,6 +25,19 @@
         <li><a href="info.html">Resume</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
+      <!-- Theme toggle button -->
+      <button id="theme-toggle" aria-label="Toggle Theme">
+        <span id="sun-icon">&#9728;</span> <!-- Sun icon for light mode -->
+        <span id="moon-icon">&#9790;</span> <!-- Moon icon for dark mode -->
+      </button>
+      <!-- Hide theme toggle for users with no JavaScript -->
+      <noscript>
+        <style>
+          #theme-toggle {
+            display: none;
+          }
+        </style>
+      </noscript>
     </nav>
   </header>
 

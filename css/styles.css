@@ -3,14 +3,82 @@
 :root {
     --primary-color: #0c0269; 
     --text-emphasis: #ff6347;
-    --button-color: color(display-p3 0.1 0.9 0.1); /* A cool, vibrant green */
+    --button-color: color(display-p3 0.1 0.76 0.1); /* A cool, vibrant green */
     --mix-color: color(display-p3 0.9 0.3 0.9); 
+    --background-color: #fff;
+    --text-color: #000;
+    --link-color: #204ddf;
 }
+
+header, nav {
+    margin: 0;
+    border: none; /* Remove any default borders */
+}
+/* Dark theme */
+[data-theme="dark"] {
+    --background-color: #333333;
+    --background-colorLighter: #727272;
+    --text-color: #E0E0E0;
+    --link-color: #FFCC00;
+    --button-color: color(display-p3 0.1 0.46 0.1);
+}
+[data-theme="dark"] #sun-icon {
+    display: none;
+}
+  
+[data-theme="dark"] #moon-icon {
+    display: inline;
+}
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#sun-icon {
+    display: inline;
+    width: 24px;
+    height: auto;
+}
+  
+#moon-icon {
+    display: none;
+}
+
+/* Increase the size of the icons */
+#sun-icon, #moon-icon {
+    font-size: 3rem; /* Adjust size as needed */
+    background-color: var(--primary-color); /* Background for the icons */
+    color: white;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+#theme-toggle {
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+    margin-left: auto; /* Push the button to the far right */
+}
+
+  
 
 /* Base Styles (Desktop & Laptop) */
 header > nav {
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    justify-content: space-between; /* Distribute space between nav items */
     align-items: center;
     padding: 1rem 3rem;
     background: var(--primary-color, darkblue);
@@ -18,20 +86,23 @@ header > nav {
   }
   
   
-  .nav-links {
+.nav-links {
     display: flex;
-    list-style: none;
+    /*list-style: none;*/
     margin: 0;
     padding: 0;
-  }
+    justify-content: center; /* Center the links within the nav */
+    flex-grow: 1; /* Allow the nav-links to take up available space */
+    list-style: none;
+}
   
-  .nav-links li {
+.nav-links li {
     margin-right: 20px;
-  }
+}
 
   
   /* Hamburger menu styles */
-  .hamburger-menu {
+.hamburger-menu {
     display: none;
     flex-direction: column;
     justify-content: space-around;
@@ -41,51 +112,51 @@ header > nav {
     background: transparent;
     border: none;
     cursor: pointer;
-  }
+}
   
-  .hamburger-menu span {
+.hamburger-menu span {
     width: 40px;
     height: 4px;
     background-color: color-mix(in srgb, var(--button-color) 60%, var(--mix-color) 85%); /* Silvery */
     border-radius: 5px;
-  }
+}
   
   /* Hide checkbox (but keep it functional) */
-  .hamburger-toggle {
+.hamburger-toggle {
     display: none;
-  }
+}
 
 
   
   /* Media Query for screens less than 480px */
-  @media (max-width: 480px) {
-    .nav-links a {
-        text-decoration: none;
-        color: #333;
-        font-size: 1.4rem;
-      }
-    /* Hide the regular navigation links on small screens */
-    .nav-links {
-      display: none;
-      width: 100%;
-      background-color: #fff;
-      position: absolute;
-      top: 60px; /* Adjust based on header height */
-      left: 0;
-      padding: 10px 0;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+@media (max-width: 480px) {
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.4rem;
     }
-  
-    /* Show the hamburger menu */
-    .hamburger-menu {
-      display: flex;
-    }
-  
-    /* Show the menu when the checkbox is checked */
-    .hamburger-toggle:checked + .hamburger-menu + .nav-links {
-      display: block;
-    }
-  }
+/* Hide the regular navigation links on small screens */
+.nav-links {
+    display: none;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the hamburger menu */
+.hamburger-menu {
+    display: flex;
+}
+
+/* Show the menu when the checkbox is checked */
+.hamburger-toggle:checked + .hamburger-menu + .nav-links {
+    display: block;
+}
+}
 
   
 nav ul {
@@ -138,7 +209,7 @@ nav ul li a {
     font-size: 1.4rem; /* Larger text */
     line-height: 1.4; /* More space between lines */
     letter-spacing: 0.5px; /* Slight spacing for better readability */
-    color: #333; /* Darker color for contrast */
+    color: var(--text-color);
     font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
     text-align: left; /* Center the text */
     margin: 20px 0; /* Add spacing around the text */
@@ -152,13 +223,13 @@ nav ul li a {
 
 
 .sidebar {
-    background-color: #f4f4f4; /* Light background color */
+    background-color: var(--background-color); /* Light background color */
     padding: 1.5rem; /* Adequate padding for readability */
     margin: 1rem 1rem; /* Margin to separate from other content */
     border-radius: 8px; /* Rounded corners for a softer look */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     font-family: 'Arial', sans-serif; /* Choose a readable, modern font */
-    color: #333; /* Dark text color for contrast */
+    color: var(--text-color); /* Dark text color for contrast */
     max-width: 300px; /* Maximum width for the sidebar */
     flex-shrink: 0; /* Prevents shrinking in a flex layout */
 }
@@ -167,7 +238,7 @@ nav ul li a {
 .sidebar h3 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333; /* Dark color for the heading */
+    color: var(--text-color);
     margin-bottom: 0.5rem; /* Space below the heading */
 }
   
@@ -176,6 +247,7 @@ nav ul li a {
     font-size: 1rem; /* Normal font size */
     line-height: 1.5; /* Adequate line spacing for readability */
     margin-bottom: 1rem; /* Space below the paragraph */
+    
 }
   
 @keyframes fadeIn {
@@ -195,9 +267,9 @@ section {
 
 .about-section {
     font-family: 'Arial', sans-serif; /* Clean and modern font */
-    background-color: #fafafa; /* Light background for the section */
+    background-color: var(--background-color); /* Light background for the section */
     padding: 2rem; /* Generous padding around content */
-    border-radius: 8px; /* Rounded corners for a softer look */
+    /*border: 1px dashed var(--text-color);*/
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     margin: 2rem 0; /* Space between sections */
 }
@@ -205,24 +277,26 @@ section {
 
   
 .about-section details {
-    background-color: #fff; /* White background for the details */
+    background-color: var(--background-color); /* White background for the details */
     border-radius: 5px; /* Rounded corners for each details element */
+    border: 1px solid var(--text-color);
     padding: 1rem; /* Padding inside the details */
     margin-bottom: 1rem; /* Space between each details block */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    
 }
   
 .about-section details summary {
     font-size: 1.3rem; /* Bigger font size for the summary */
     font-weight: bold;
     cursor: pointer; /* Make the summary clickable */
-    color: #333; /* Dark color for the summary */
+    color: var(--text-color); /* Dark color for the summary */
 }
   
 .about-section details p {
     font-size: 1rem; /* Normal font size for the paragraph */
     line-height: 1.6; /* Increased line height for readability */
-    color: #555; /* Lighter text for paragraph */
+    color: var(--text-color); /* Lighter text for paragraph */
 }
   
 .about-section details[open] summary {
@@ -248,12 +322,12 @@ hgroup > p {
 }
 
 footer p {
-    background-color: var(--primary-color, ); /* Dark background for the footer */
+    background-color: var(--primary-color, darkblue); /* Dark background for the footer */
     color: #fff; /* White text for contrast */
     padding: 1.5rem 0; /* Vertical padding for spacing */
     text-align: center; /* Center the text */
     font-size: 1.2rem; /* Larger font size for readability */
-    border-top: 3px solid var(--text-emphasis,coral); /* Optional: add a thin border to separate from content */
+    /*border-top: 3px solid var(--text-emphasis,coral); /* Optional: add a thin border to separate from content */
     margin-top: 2rem; /* Space between footer and the content above */
     margin: 0; /* Remove default margin */
 }
@@ -264,6 +338,9 @@ img, video {
     height: auto;         /* Maintains the aspect ratio of the image */
 }
 
+li {
+    margin-bottom: 0.7rem;
+}
 dl {
     position: sticky;            /* Allows it to be placed at the bottom of the section */
     background-color: #fef8c2;     /* Light yellow background to simulate a sticky note */
@@ -285,6 +362,10 @@ dl {
     margin-left: 1.5rem;
     margin-bottom: 1rem;
     font-style: italic;
+  }
+
+  dd, dt {
+    color: black;
   }
 /* Optional: For smaller screen adjustments (e.g., stack vertically on phones) */
 @media (max-width: 768px) {
@@ -349,13 +430,13 @@ th, td {
 }
   
 th {
-    background-color: #f7f7f7;
-    color: var(--primary-color, #2c3e50);
+    background-color: var(--background-color);
+    font-size: xx-large;
     font-weight: bold;
 }
   
 td {
-    background-color: #f9f9f9;
+    background-color: var(--background-color);
 }
   
 caption {
@@ -376,7 +457,7 @@ colgroup col:nth-child(2) {
   display: inline-block;
   padding: 10px 20px;
   background-color: #0077B5;
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1rem;
   border-radius: 5px;
@@ -390,6 +471,8 @@ dialog {
     text-align: center;      /* Centers the inline content (the button) */
     margin: 0rem auto;          /* This centers the button horizontally */
     font-size: large;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 dialog button {
@@ -410,8 +493,8 @@ form {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    background-color: var(--background-color);
+    border: 0.1rem dashed var(--text-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
   
@@ -424,7 +507,7 @@ fieldset {
 legend {
     font-size: 1.5rem;
     font-weight: bold;
-    color: var(--primary-color, );
+    /*color: var(--primary-color, blue);*/
     margin-bottom: 20px;
     text-align: center;
 }
@@ -443,6 +526,7 @@ input, textarea, select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    background-color: var(--background-colorLighter);
 }
   
 input:focus, textarea:focus, select:focus {
@@ -454,11 +538,12 @@ input:focus, textarea:focus, select:focus {
 textarea {
     resize: vertical;
     min-height: 150px;
+    
 }
   
-button {
+form button {
     background-color: var(--button-color, blue);
-    color: white;
+    color: var(--text-color);
     font-size: 1rem;
     padding: 12px 20px;
     border: none;
@@ -471,11 +556,13 @@ button {
 }
   
 button:hover {
-    background-color: #333;
+    background-color: #a173dd;
 }
+
   
 select {
-    background-color: #fff;
+    color: var(--text-color);
+    background-color: var(--background-colorLighter);
 }
 
 .nav-links li:has(a[href="index.html"]:hover),
@@ -537,7 +624,7 @@ fancy-card {
     border-radius: 8px;
     max-width: 300px;
     margin: 1rem auto;
-    background: #f9f9f9;
+    background: var(--background-color);
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
