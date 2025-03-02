@@ -35,7 +35,7 @@ function validateOnBlur(input, regex, fieldName) {
                 input.setCustomValidity("Please use only letters, spaces, apostrophes, and hyphens.");
             }
             else if(input == emailField) {
-                input.setCustomValidity(`${fieldName} is not valid. Please enter a valid email address.`);
+                input.setCustomValidity(`${fieldName} of ${input.value} is not valid. Please enter a valid email address.`);
                 errorMessageText = `${fieldName} is not valid. Please enter a valid email address.`;
             }
             else if (input == commentsField) {
