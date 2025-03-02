@@ -33,6 +33,10 @@
     height: 1.5rem;
 
 }
+
+.illegal {
+    background-color: #ffcccc; 
+}
   
 .info {
     background-color: #d1ecf1;
@@ -40,8 +44,27 @@
     border: 1px solid #bee5eb;
     height: 1.5rem;
 }
+
+.warning {
+    background-color: orange;
+}
+
+.error-message {
+    display: none;
+    background-color: red;
+    color: black;
+}
+
+.flash-error {
+    animation: flash 0.5s 3;
+}
+
+@keyframes flash {
+    0% { background-color: red; }
+    100% { background-color: white; }
+}
 /* Validity and validation styles */
-input:required, textarea:required {
+input:required:empty, textarea:required:empty {
     border: 1px solid #ccc;
 }
   
@@ -49,9 +72,6 @@ input:valid, textarea:valid {
     border-color: #4CAF50; /* Green border when valid */
 }
   
-input:invalid, textarea:invalid {
-    border-color: #e0857f; /* Red border when invalid */
-}
   
 /* Display placeholder styles */
 input:placeholder-shown, textarea:placeholder-shown {
